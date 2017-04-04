@@ -3,7 +3,7 @@
 namespace WowPacketParser.Enums
 {
     [Flags]
-    public enum NPCFlags
+    public enum NPCFlags : ulong
     {
         None              = 0x00000000,
         Gossip            = 0x00000001,
@@ -35,6 +35,13 @@ namespace WowPacketParser.Enums
         MailObject        = 0x04000000,
         ForgeMaster       = 0x08000000,
         Transmogrifier    = 0x10000000,
-        Vaultkeeper       = 0x20000000
+        Vaultkeeper       = 0x20000000,
+        BlackMarket       = 0x0080000000,     // black market
+        ItemUpgradeMaster = 0x0100000000,
+        GarrisonArchitect = 0x0200000000,
+        ShipmentCrafter   = 0x1000000000,
+        GarrisonMissionNPC = 0x2000000000,
+        TradeskillNPC     = 0x4000000000,
+        BlackMarketView   = 0x8000000000
     }
 }

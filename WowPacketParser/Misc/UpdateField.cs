@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace WowPacketParser.Misc
@@ -10,12 +11,21 @@ namespace WowPacketParser.Misc
         {
             SingleValue = 0; // CS0171
             UInt32Value = val;
+            Dynamic = null;
         }
 
         public UpdateField(float val)
         {
             UInt32Value = 0; // CS0171
             SingleValue = val;
+            Dynamic = null;
+        }
+
+        public UpdateField(Dictionary<int, UpdateField> dict)
+        {
+            UInt32Value = 0;
+            SingleValue = 0;
+            Dynamic = dict;
         }
 
         [FieldOffset(0)]
@@ -23,6 +33,9 @@ namespace WowPacketParser.Misc
 
         [FieldOffset(0)]
         public readonly float SingleValue;
+
+        [FieldOffset(8)]
+        public readonly Dictionary<int, UpdateField> Dynamic;
 
         public override bool Equals(object obj)
         {

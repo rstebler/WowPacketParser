@@ -25,7 +25,7 @@ namespace WowPacketParser.Store.Objects
         public uint? OptionID;
 
         [DBFieldName("npc_option_npcflag")]
-        public uint? NpcOptionNpcFlag;
+        public ulong? NpcOptionNpcFlag;
 
         [DBFieldName("action_menu_id")]
         public uint? ActionMenuID;

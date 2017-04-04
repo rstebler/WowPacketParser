@@ -31,6 +31,11 @@ namespace WowPacketParser.SQL.Builders
         /// If true gameobject list will be included as method invocation parameter
         /// </summary>
         public bool Gameobjects { get; set; }
+
+        /// <summary>
+        /// If true conversation list will be included as method invocation parameter
+        /// </summary>
+        public bool Conversations { get; set; }
     }
 
     [AttributeUsage(AttributeTargets.Class)]

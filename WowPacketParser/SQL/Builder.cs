@@ -85,6 +85,12 @@ namespace WowPacketParser.SQL
                     .OrderBy(pair => pair.Value.Item2)                                                          // order by spawn time
                     .ToDictionary(obj => obj.Key, obj => obj.Value.Item1 as GameObject);
 
+            var conversations = Storage.Objects.IsEmpty()
+                ? new Dictionary<WowGuid, Conversation>()                                                       // empty dict if there are no objects
+                : Storage.Objects.Where(obj => obj.Value.Item1.Type == ObjectType.Conversation)
+                    .OrderBy(pair => pair.Value.Item2)                                                          // order by receive time
+                    .ToDictionary(obj => obj.Key, obj => obj.Value.Item1 as Conversation);
+
             foreach (var obj in Storage.Objects)
                 obj.Value.Item1.LoadValuesFromUpdateFields();
 
@@ -128,6 +134,9 @@ namespace WowPacketParser.SQL
 
                     if (attr.Gameobjects)
                         parameters.Add(gameObjects);
+
+                    if (attr.Conversations)
+                        parameters.Add(conversations);
 
                     Trace.WriteLine($"{i}/{builderMethods.Count} - Write {method.Name}");
                     try

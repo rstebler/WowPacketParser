@@ -219,9 +219,15 @@ namespace WowPacketParser.SQL
 
                     var row = new Row<T>();
                     var elem2 = dbList[elem1.Item1].Data;
+                    string[] relevantFieldNames = { "`name`", "`femaleName`", "`subname`", "`IconName`", "`minlevel`", "`maxlevel`", "`scale_level_min`", "`scale_level_max`", "`exp`", "`exp_unk`", "`faction`", "`npcflag`", "`speed_walk`", "`speed_run`", "`rank`", "`BaseAttackTime`", "`RangeAttackTime`", "`unit_class`", "`unit_flags`", "`unit_flags2`", "`family`", "`type`", "`type_flags`", "`type_flags2`", "`VehicleId`", "`HoverHeight`", "`HealthModifier`", "`ManaModifier`", "`movementId`", "`HealthScalingExpansion`" };
 
                     foreach (var field in fields)
                     {
+                        if (typeof(T) == typeof(WowPacketParser.Store.Objects.CreatureTemplate) && Array.IndexOf(relevantFieldNames, field.Item1) < 0)
+                        {
+                            field.Item2.SetValue(elem1.Item1, null);
+                            continue;
+                        }
                         var val1 = field.Item2.GetValue(elem1.Item1);
                         var val2 = field.Item2.GetValue(elem2);
 

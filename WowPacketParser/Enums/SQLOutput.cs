@@ -5,6 +5,10 @@
 // ReSharper disable InconsistentNaming
         areatrigger_template,
         areatrigger_template_polygon_vertices,
+        conversation_actors,
+        conversation_actor_template,
+        conversation_line_template,
+        conversation_template,
         creature,
         creature_addon,
         creature_equip_template,

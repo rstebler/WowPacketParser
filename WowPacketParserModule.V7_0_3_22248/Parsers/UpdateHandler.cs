@@ -86,6 +86,9 @@ namespace WowPacketParserModule.V7_0_3_22248.Parsers
                 case ObjectType.AreaTrigger:
                     obj = new SpellAreaTrigger();
                     break;
+                case ObjectType.Conversation:
+                    obj = new Conversation();
+                    break;
                 default:
                     obj = new WoWObject();
                     break;
@@ -729,6 +732,8 @@ namespace WowPacketParserModule.V7_0_3_22248.Parsers
                     if (!mask[i])
                         continue;
 
+                    var dynamicDict = new Dictionary<int, UpdateField>();
+
                     string key = "Dynamic Block Value " + i;
                     if (i < objectEnd)
                         key = UpdateFields.GetUpdateFieldName<ObjectDynamicField>(i);
@@ -813,7 +818,10 @@ namespace WowPacketParserModule.V7_0_3_22248.Parsers
                         var blockVal = packet.ReadUpdateField();
                         string value = blockVal.UInt32Value + "/" + blockVal.SingleValue;
                         packet.AddValue(key, value, index, j);
+                        dynamicDict.Add(j, blockVal);
                     }
+                    if (type == ObjectType.Conversation)
+                        dict.Add(1000 + i, new UpdateField(dynamicDict));
                 }
             }
 

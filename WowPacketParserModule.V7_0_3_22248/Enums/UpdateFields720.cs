@@ -405,7 +405,7 @@ namespace WowPacketParserModule.V7_2_0_23826.Enums
 
     public enum ConversationField
     {
-        CONVERSATION_LAST_LINE_END_TIME                        = ObjectField.OBJECT_END + 0x000, // Size: 1, Flags: DYNAMIC
+        CONVERSATION_FIELD_LAST_LINE_DURATION                  = ObjectField.OBJECT_END + 0x000, // Size: 1, Flags: DYNAMIC
         CONVERSATION_END                                       = ObjectField.OBJECT_END + 0x001,
     }
 

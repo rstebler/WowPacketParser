@@ -31,7 +31,7 @@ namespace WowPacketParser.Store.Objects
         public uint? ActionMenuID;
 
         [DBFieldName("action_poi_id")]
-        public uint? ActionPoiID;
+        public uint? ActionPoiID = 0;
 
         [DBFieldName("box_coded")]
         public bool? BoxCoded;
@@ -44,5 +44,7 @@ namespace WowPacketParser.Store.Objects
 
         [DBFieldName("BoxBroadcastTextID")]
         public int? BoxBroadcastTextID;
+
+        public string BroadcastTextIDHelper;
     }
 }

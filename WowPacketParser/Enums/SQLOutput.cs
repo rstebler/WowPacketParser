@@ -2,13 +2,14 @@
 {
     public enum SQLOutput
     {
-// ReSharper disable InconsistentNaming
+        // ReSharper disable InconsistentNaming
         areatrigger_template,
         areatrigger_template_polygon_vertices,
         conversation_actors,
         conversation_actor_template,
         conversation_line_template,
         conversation_template,
+        broadcast_text,
         creature,
         creature_addon,
         creature_equip_template,
@@ -38,6 +39,7 @@
         quest_poi_points,
         quest_template,
         scene_template,
+        spell_target_position,
         spell_areatrigger,
         SniffData,
         SniffDataOpcodes,

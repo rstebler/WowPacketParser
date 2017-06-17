@@ -207,10 +207,14 @@
     <Compile Include="Hotfix\PvpTalentEntry.cs" />
     <Compile Include="Hotfix\PvpTalentUnlockEntry.cs" />
     <Compile Include="Hotfix\QuestFactionRewardEntry.cs" />
+    <Compile Include="Hotfix\QuestPOIPointEntry.cs" />
+    <Compile Include="Hotfix\QuestPOIBlobEntry.cs" />
+    <Compile Include="Hotfix\QuestLineXQuestEntry.cs" />
     <Compile Include="Hotfix\QuestMoneyRewardEntry.cs" />
     <Compile Include="Hotfix\QuestObjectiveEntry.cs" />
     <Compile Include="Hotfix\QuestPackageItemEntry.cs" />
     <Compile Include="Hotfix\QuestPackageItemEntry720.cs" />
+    <Compile Include="Hotfix\QuestLineEntry.cs" />
     <Compile Include="Hotfix\QuestSortEntry.cs" />
     <Compile Include="Hotfix\QuestV2Entry.cs" />
     <Compile Include="Hotfix\QuestXPEntry.cs" />

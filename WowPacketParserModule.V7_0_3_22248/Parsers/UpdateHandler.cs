@@ -7,6 +7,7 @@ using WowPacketParser.Parsing;
 using WowPacketParser.Store;
 using WowPacketParser.Store.Objects;
 using CoreParsers = WowPacketParser.Parsing.Parsers;
+using SplineFlag = WowPacketParserModule.V7_0_3_22248.Enums.SplineFlag;
 
 namespace WowPacketParserModule.V7_0_3_22248.Parsers
 {
@@ -245,7 +246,7 @@ namespace WowPacketParserModule.V7_0_3_22248.Parsers
                     {
                         packet.ResetBitReader();
 
-                        packet.ReadUInt32E<SplineFlag434>("SplineFlags", index);
+                        packet.ReadUInt32E<SplineFlag>("SplineFlags", index);
                         packet.ReadUInt32("Elapsed", index);
                         packet.ReadUInt32("Duration", index);
                         packet.ReadSingle("DurationModifier", index);

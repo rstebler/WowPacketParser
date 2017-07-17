@@ -113,7 +113,7 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("unit_flags2")]
         public UnitFlags2? UnitFlags2;
 
-        [DBFieldName("unit_flags3", TargetedDatabase.Legion)]
+        [DBFieldName("unit_flags3", TargetedDatabase.None)]
         public UnitFlags3? UnitFlags3;
 
         [DBFieldName("dynamicflags", TargetedDatabase.Zero, TargetedDatabase.WarlordsOfDraenor)]

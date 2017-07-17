@@ -8,6 +8,8 @@ namespace WowPacketParser.Enums
         WrathOfTheLichKing  = 1,
         Cataclysm           = 2,
         WarlordsOfDraenor   = 3,
-        Legion              = 4
+        Legion              = 4,
+
+        None                = 5
     }
 }

@@ -86,6 +86,12 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("maxlevel")]
         public int? MaxLevel;
 
+        [DBFieldName("scale_level_min")]
+        public int? ScaleLevelMin;
+
+        [DBFieldName("scale_level_max")]
+        public int? ScaleLevelMax;
+
         [DBFieldName("faction")]
         public uint? Faction;
 

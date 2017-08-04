@@ -404,7 +404,7 @@ namespace WowPacketParser.SQL.Builders
                     continue;
 
                 var npc = unit.Value;
-                int minLevel, maxLevel;
+                /*int minLevel, maxLevel;
 
                 if (npc.ScalingMinLevel != null && npc.ScalingMaxLevel != null)
                 {
@@ -415,14 +415,16 @@ namespace WowPacketParser.SQL.Builders
                 {
                     minLevel = (int)levels[unit.Key.GetEntry()].Item1;
                     maxLevel = (int)levels[unit.Key.GetEntry()].Item2;
-                }
+                }*/
 
                 var template = new CreatureTemplateNonWDB
                 {
                     Entry = unit.Key.GetEntry(),
-                    GossipMenuId = npc.GossipId,
-                    MinLevel = minLevel,
-                    MaxLevel = maxLevel,
+                    GossipMenuId = null,
+                    MinLevel = (int)levels[unit.Key.GetEntry()].Item1,
+                    MaxLevel = (int)levels[unit.Key.GetEntry()].Item2,
+                    ScaleLevelMin = (int)npc.ScalingMinLevel.GetValueOrDefault(0),
+                    ScaleLevelMax = (int)npc.ScalingMaxLevel.GetValueOrDefault(0),
                     Faction = npc.Faction.GetValueOrDefault(35),
                     NpcFlag = npc.NpcFlags.GetValueOrDefault(NPCFlags.None),
                     SpeedRun = npc.Movement.RunSpeed,
@@ -438,13 +440,28 @@ namespace WowPacketParser.SQL.Builders
                     HoverHeight = npc.HoverHeight.GetValueOrDefault(1.0f)
                 };
 
+                if (npc.GossipId > 0)
+                    template.GossipMenuId = npc.GossipId;
+
                 if (Settings.UseDBC)
                 {
                     var creatureDiff = DBC.DBC.CreatureDifficulty.Where(diff => diff.Value.CreatureID == unit.Key.GetEntry());
                     if (creatureDiff.Any())
                     {
-                        template.MinLevel = creatureDiff.Select(lv => lv.Value.MinLevel).First();
-                        template.MaxLevel = creatureDiff.Select(lv => lv.Value.MaxLevel).First();
+                        if (template.ScaleLevelMin == 0 && template.ScaleLevelMax == 0)
+                        {
+                            var dbcMinLevel = creatureDiff.Select(lv => lv.Value.MinLevel).First();
+                            var dbcMaxLevel = creatureDiff.Select(lv => lv.Value.MaxLevel).First();
+                            if (dbcMinLevel > 0 && dbcMaxLevel > 0)
+                            {
+                                template.MinLevel = dbcMinLevel;
+                                template.MaxLevel = dbcMaxLevel;
+                            }
+                        } else if (template.ScaleLevelMax > 0)
+                        {
+                            template.MinLevel = template.ScaleLevelMax;
+                            template.MaxLevel = template.ScaleLevelMax;
+                        }
                         template.Faction  = creatureDiff.Select(lv => lv.Value.FactionTemplateID).First();
                     }
                 }

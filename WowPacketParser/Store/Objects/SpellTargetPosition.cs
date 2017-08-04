@@ -23,6 +23,9 @@ namespace WowPacketParser.Store.Objects
         [DBFieldName("PositionZ")]
         public float? PositionZ;
 
+        [DBFieldName("Orientation")]
+        public float? Orientation;
+
         [DBFieldName("VerifiedBuild")]
         public int? VerifiedBuild = ClientVersion.BuildInt;
 

@@ -119,8 +119,9 @@ namespace WowPacketParserModule.V7_0_3_22248.Parsers
             if (hasDstLoc)
                 dstLocation = V6_0_2_19033.Parsers.SpellHandler.ReadLocation(packet, "DstLocation");
 
+            var orientation = 0f;
             if (hasOrient)
-                packet.ReadSingle("Orientation", idx);
+                orientation = packet.ReadSingle("Orientation", idx);
 
             int mapID = -1;
             if (hasMapID)
@@ -145,6 +146,7 @@ namespace WowPacketParserModule.V7_0_3_22248.Parsers
                                 PositionX = dstLocation.X,
                                 PositionY = dstLocation.Y,
                                 PositionZ = dstLocation.Z,
+                                Orientation = orientation,
                                 MapID = (ushort)mapID,
                                 EffectHelper = effectHelper
                             };

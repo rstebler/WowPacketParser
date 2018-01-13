@@ -2,25 +2,25 @@
 
 namespace WowPacketParser.Store.Objects
 {
-    [DBTableName("gossip_menu_option_box")]
+    [DBTableName("gossip_menu_option")]
     public class GossipMenuOptionBox : IDataModel
     {
-        [DBFieldName("MenuId", true)]
+        [DBFieldName("menu_id", true)]
         public uint? MenuId;
 
-        [DBFieldName("OptionIndex", true)]
+        [DBFieldName("id", true)]
         public uint? OptionIndex;
 
-        [DBFieldName("BoxCoded")]
+        [DBFieldName("box_coded")]
         public bool? BoxCoded;
 
-        [DBFieldName("BoxMoney")]
+        [DBFieldName("box_money")]
         public uint? BoxMoney;
 
-        [DBFieldName("BoxText")]
+        [DBFieldName("box_text")]
         public string BoxText;
 
-        [DBFieldName("BoxBroadcastTextId")]
+        [DBFieldName("BoxBroadcastTextID")]
         public int? BoxBroadcastTextId;
 
         public bool IsEmpty { get { return !BoxCoded.HasValue || !BoxCoded.Value; } }

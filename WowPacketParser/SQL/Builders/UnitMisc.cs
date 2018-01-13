@@ -493,8 +493,8 @@ namespace WowPacketParser.SQL.Builders
 
                 // has trainer flag but doesn't have prof nor class trainer flag
                 if ((template.NpcFlag & NPCFlags.Trainer) != 0 &&
-                    ((template.NpcFlag & NPCFlags.ProfessionTrainer) == 0 ||
-                     (template.NpcFlag & NPCFlags.ClassTrainer) == 0))
+                    (template.NpcFlag & NPCFlags.ProfessionTrainer) == 0 &&
+                     (template.NpcFlag & NPCFlags.ClassTrainer) == 0)
                 {
                     var subname = GetSubName((int)unit.Key.GetEntry(), false); // Fall back
                     var entry = Storage.CreatureTemplates.Where(creature => creature.Item1.Entry == unit.Key.GetEntry());

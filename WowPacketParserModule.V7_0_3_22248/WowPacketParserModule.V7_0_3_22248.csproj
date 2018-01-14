@@ -169,6 +169,7 @@
     <Compile Include="Hotfix\ItemSetEntry.cs" />
     <Compile Include="Hotfix\ItemSetSpellEntry.cs" />
     <Compile Include="Hotfix\ItemSparseEntry.cs" />
+    <Compile Include="Hotfix\ItemSparseEntry730.cs" />
     <Compile Include="Hotfix\ItemSparseEntry720.cs" />
     <Compile Include="Hotfix\ItemSpecEntry.cs" />
     <Compile Include="Hotfix\ItemSpecOverrideEntry.cs" />

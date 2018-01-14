@@ -1,12 +1,12 @@
 using WowPacketParser.Enums;
 using WowPacketParser.Hotfix;
 
-namespace WowPacketParserModule.V7_2_0_23826.Hotfix
+namespace WowPacketParserModule.V7_3_0_24920.Hotfix
 {
-    [HotfixStructure(DB2Hash.ItemSparse, ClientVersionBuild.V7_2_0_23826, ClientVersionBuild.V7_3_0_24920, HasIndexInData = false)]
+    [HotfixStructure(DB2Hash.ItemSparse, ClientVersionBuild.V7_3_0_24920, HasIndexInData = false)]
     public class ItemSparseEntry
     {
-        [HotfixArray(3)]
+        [HotfixArray(4)]
         public uint[] Flags { get; set; }
         public float Unk1 { get; set; }
         public float Unk2 { get; set; }
@@ -31,7 +31,7 @@ namespace WowPacketParserModule.V7_2_0_23826.Hotfix
         public float ArmorDamageModifier { get; set; }
         public uint Duration { get; set; }
         public float StatScalingFactor { get; set; }
-        public ushort AllowableClass { get; set; }
+        public short AllowableClass { get; set; }
         public ushort ItemLevel { get; set; }
         public ushort RequiredSkill { get; set; }
         public ushort RequiredSkillRank { get; set; }

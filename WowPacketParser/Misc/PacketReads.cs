@@ -184,7 +184,7 @@ namespace WowPacketParser.Misc
             for (uint idx = 0; idx < 32; idx++)
             {
                 var tuple = Tuple.Create(spellID, idx);
-                if (DBC.DBC.SpellEffectStores.ContainsKey(tuple))
+                if (Settings.UseDBC && DBC.DBC.SpellEffectStores.ContainsKey(tuple))
                 {
                     spellInfo += Environment.NewLine;
                     var effect = DBC.DBC.SpellEffectStores[tuple];

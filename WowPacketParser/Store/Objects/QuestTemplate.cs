@@ -241,7 +241,7 @@ namespace WowPacketParser.Store.Objects
         public RaceMask? AllowableRaces;
 
         [DBFieldName("AllowableRaces", TargetedDatabase.WarlordsOfDraenor)]
-        public ulong? AllowableRacesWod;
+        public long? AllowableRacesWod;
 
         [DBFieldName("QuestRewardID", TargetedDatabase.Legion)]
         public int? QuestRewardID;

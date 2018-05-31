@@ -1,4 +1,4 @@
-using WowPacketParser.Enums;
+﻿using WowPacketParser.Enums;
 using WowPacketParser.SQL;
 
 namespace WowPacketParser.Store.Objects
@@ -6,10 +6,10 @@ namespace WowPacketParser.Store.Objects
     [DBTableName("gossip_menu")]
     public class GossipMenu : IDataModel
     {
-        [DBFieldName("MenuId", true)]
+        [DBFieldName("entry", true)]
         public uint? Entry;
 
-        [DBFieldName("TextId", true)]
+        [DBFieldName("text_id", true)]
         public uint? TextID;
 
         public ObjectType ObjectType;

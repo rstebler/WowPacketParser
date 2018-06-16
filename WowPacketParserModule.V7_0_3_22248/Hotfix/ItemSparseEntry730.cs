@@ -3,7 +3,7 @@ using WowPacketParser.Hotfix;
 
 namespace WowPacketParserModule.V7_3_0_24920.Hotfix
 {
-    [HotfixStructure(DB2Hash.ItemSparse, ClientVersionBuild.V7_3_0_24920, HasIndexInData = false)]
+    [HotfixStructure(DB2Hash.ItemSparse, ClientVersionBuild.V7_3_0_24920, ClientVersionBuild.V7_3_5_25996, HasIndexInData = false)]
     public class ItemSparseEntry
     {
         [HotfixArray(4)]

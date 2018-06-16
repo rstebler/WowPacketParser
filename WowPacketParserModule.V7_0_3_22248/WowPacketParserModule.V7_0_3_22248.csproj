@@ -72,6 +72,7 @@
     <Compile Include="Hotfix\BattlePetBreedStateEntry.cs" />
     <Compile Include="Hotfix\BattlePetSpeciesEntry.cs" />
     <Compile Include="Hotfix\BattlePetSpeciesStateEntry.cs" />
+    <Compile Include="Hotfix\BroadcastTextEntry735.cs" />
     <Compile Include="Hotfix\BroadcastTextEntry.cs" />
     <Compile Include="Hotfix\CharSectionsEntry.cs" />
     <Compile Include="Hotfix\CharStartOutfitEntry.cs" />

@@ -55,11 +55,22 @@ namespace WowPacketParserModule.V7_0_3_22248.Parsers
                         bct.Language = db2File.ReadByte("Language");
                         bct.Type = db2File.ReadByte("Type");
 
-                        bct.SoundID = new uint?[2];
-                        for (int i = 0; i < 2; ++i)
-                            bct.SoundID[i] = db2File.ReadUInt32("SoundID", i);
+                        if (ClientVersion.AddedInVersion(ClientVersionBuild.V7_3_5_25848))
+                        {
+                            bct.PlayerConditionID = db2File.ReadUInt32("PlayerConditionID");
 
-                        bct.PlayerConditionID = db2File.ReadUInt32("PlayerConditionID");
+                            bct.SoundID = new uint?[2];
+                            for (int i = 0; i < 2; ++i)
+                                bct.SoundID[i] = db2File.ReadUInt32("SoundID", i);
+                        }
+                        else
+                        {
+                            bct.SoundID = new uint?[2];
+                            for (int i = 0; i < 2; ++i)
+                                bct.SoundID[i] = db2File.ReadUInt32("SoundID", i);
+
+                            bct.PlayerConditionID = db2File.ReadUInt32("PlayerConditionID");
+                        }
 
                         Storage.BroadcastTexts.Add(bct, packet.TimeSpan);
 

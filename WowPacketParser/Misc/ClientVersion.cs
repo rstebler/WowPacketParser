@@ -217,11 +217,10 @@ namespace WowPacketParser.Misc
             new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_25996, new DateTime(2018, 02, 08)),
             new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26124, new DateTime(2018, 02, 28)),
             new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26365, new DateTime(2018, 04, 04)),
-            new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26654, new DateTime(2018, 05, 18)),
-            new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26755, new DateTime(2018, 06, 11)),
+            new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26654, new DateTime(2018, 05, 24)),
+            new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26755, new DateTime(2018, 05, 31)),
             new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26822, new DateTime(2018, 06, 12)),
-            new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26822, new DateTime(2018, 06, 12)),
-            new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26899, new DateTime(2018, 06, 21)),
+            new KeyValuePair<ClientVersionBuild, DateTime>(ClientVersionBuild.V7_3_5_26899, new DateTime(2018, 06, 22)),
         };
 
         private static ClientType _expansion;
